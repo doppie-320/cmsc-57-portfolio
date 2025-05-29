@@ -31,27 +31,30 @@
         }, startDelay);
 
         setTimeout(() => {
-            $('body').css('transition', 'background-color 0.5s steps(10, end)').removeClass('flash');
-            $('#lcd-bleed').show();
+            $('body').css('transition', 'background-color 0.5s steps(7, end)').removeClass('flash');            
         }, startDelay + 50);
 
-        setTimeout(() => {
-            $('#title-display').show();
+        setTimeout(() => {            
+            $('#lcd-bleed').show();
         }, startDelay + 1000);
 
         setTimeout(() => {
-            $('#title-display').hide();
-        }, startDelay + 1000 + 500);
-        setTimeout(() => {
-            $('#title-display').addClass('normal-text').removeClass('amber-warning').html("SELF TEST IN PROGRESS<br>(MAX 20 SECONDS)").show();
-        }, startDelay + 1000 + 600);
+            $('#title-display').show();
+        }, startDelay + 2000);
 
         setTimeout(() => {
             $('#title-display').hide();
-        }, startDelay + 6000);
+        }, startDelay + 2000 + 500);
+        setTimeout(() => {
+            $('#title-display').addClass('normal-text').removeClass('amber-warning').html("SELF TEST IN PROGRESS<br>(MAX 20 SECONDS)").show();
+        }, startDelay + 2000 + 600);
+
+        setTimeout(() => {
+            $('#title-display').hide();
+        }, startDelay + 7000);
         setTimeout(() => {
             window.location.href = "pages/main.html";
-        }, startDelay + 7000);
+        }, startDelay + 8000);
     </script>
 </body>
 </html>
