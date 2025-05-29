@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'b612 mono';
+    src: url('../../assets/fonts/b612-mono/B612Mono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'b612 mono';
+    src: url('../../assets/fonts/b612-mono/B612Mono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'b612 mono';
+    src: url('../../assets/fonts/b612-mono/B612Mono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'b612 mono';
+    src: url('../../assets/fonts/b612-mono/B612Mono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

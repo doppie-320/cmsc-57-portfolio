@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMSC 57 Portfolio</title>
+
+    <link rel="stylesheet" href="pages/style/mcdu_screen.css">
+    <link rel="stylesheet" href="pages/style/intro.css">
+    <link rel="stylesheet" href="pages/style/lcd_display.css">
+    <link rel="stylesheet" href="pages/style/lcd_bl_bleed.css">
+    <link rel="stylesheet" href="pages/style/fontdef.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="lcd-bleed"></div>
+    <div id="title-display" class="amber-warning">
+        NO DATA...
+    </div>
+    <div class="footer"></div>
+
+    <script>
+        let startDelay = 1500;
+
+        $('#lcd-bleed').hide();
+        $('#title-display').hide();
+
+        setTimeout(() => {            
+            $('body').css('transition', 'none').addClass('flash');
+        }, startDelay);
+
+        setTimeout(() => {
+            $('body').css('transition', 'background-color 0.5s steps(10, end)').removeClass('flash');
+            $('#lcd-bleed').show();
+        }, startDelay + 50);
+
+        setTimeout(() => {
+            $('#title-display').show();
+        }, startDelay + 1000);
+
+        setTimeout(() => {
+            $('#title-display').hide();
+        }, startDelay + 1000 + 500);
+        setTimeout(() => {
+            $('#title-display').addClass('normal-text').removeClass('amber-warning').html("SELF TEST IN PROGRESS<br>(MAX 20 SECONDS)").show();
+        }, startDelay + 1000 + 600);
+
+        setTimeout(() => {
+            $('#title-display').hide();
+        }, startDelay + 6000);
+        setTimeout(() => {
+            window.location.href = "pages/main.html";
+        }, startDelay + 7000);
+    </script>
+</body>
+</html>

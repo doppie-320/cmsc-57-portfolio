@@ -1,0 +1,19 @@
+body {
+    height: 100%;
+    position: relative;
+}
+
+#lcd-bleed {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at top left, rgba(100, 150, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at top right, rgba(80, 130, 255, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, rgba(80, 130, 255, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(100, 150, 255, 0.08) 0%, transparent 40%),
+        rgba(255, 255, 255, 0.05);
+
+    z-index: -1;
+}

@@ -1,0 +1,79 @@
+body {
+    margin: 20px;    
+    background-color: black;
+    color: white;
+
+    font-family: 'b612 mono';
+
+    font-size: 35px;
+}
+
+#display-vp {
+    position: relative;
+}
+
+.line-select-content {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.selectable:hover {
+    background-color: white;
+    color: black;
+
+    z-index: 100;
+}
+
+.headers {
+    top: -20px;
+}
+.headers .lsc-item {
+    font-size: 20px;
+    height: 35px;
+}
+
+.lsc-item {
+    font-size: 35px;
+    height: 35px;
+}
+
+#left-side {
+    left: 0;
+    text-align: left;
+    align-self: flex-start;
+}
+
+#middle {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+#right-side {
+    right: 0;
+    text-align: right;        
+}
+
+.disabled {
+    color: gray;
+}
+
+.automagic {
+    font-size: 25px;
+}
+
+.amber-warning {
+    color:rgb(255, 200, 0);
+}
+
+.cyan {
+    color:cyan;
+}
+
+.normal-text {
+    color: rgb(0, 200, 0);
+}
