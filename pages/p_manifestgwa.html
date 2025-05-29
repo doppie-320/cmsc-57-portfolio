@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMSC 57 Portfolio</title>
+
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/mcdu_screen.css">
+    <link rel="stylesheet" href="./style/intro.css">
+    <link rel="stylesheet" href="./style/lcd_display.css">
+    <link rel="stylesheet" href="./style/lcd_bl_bleed.css">
+    <link rel="stylesheet" href="./style/fontdef.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="lcd-bleed"></div>
+    <div id="display-vp" style="z-index: 1;">
+        <!--CONTENT-->
+        <div class="left-side line-select-content">
+            <div class="lsc-item">
+            </div>
+            <div class="lsc-item selectable">
+                <a href="main.html">&lt;BACK</a>
+            </div>
+        </div>
+
+        <div class="middle line-select-content" style="z-index: -1;">
+            <div class="lsc-item">
+                GWA MANIFESTATION
+            </div>
+            <div class="lsc-item">
+
+            </div>
+            <div class="lsc-item">
+
+            </div>
+        </div>
+
+        <div class="right-side line-select-content">
+            <div class="lsc-item">
+            </div>
+            <div class="lsc-item cyan automagic">
+                1.00*
+            </div>
+            <div class="lsc-item cyan automagic">
+                1.25*
+            </div>
+            <div class="lsc-item cyan automagic">
+                1.50*
+            </div>
+            <div class="lsc-item cyan automagic">
+                1.75*
+            </div>
+            <div class="lsc-item cyan automagic">
+                1.75*
+            </div>
+        </div>
+
+        <!--HEADERS-->
+        <!--H-LEFT-->
+        <div class="left-side line-select-content headers">
+            <div class="lsc-item">
+            </div>
+            <div class="lsc-item">
+
+            </div>
+            <div class="lsc-item">
+
+            </div>
+        </div>
+
+        <!--HEADERS-->
+        <!--H-RIGHT-->
+        <div class="right-side line-select-content headers">
+            <div class="lsc-item">
+            </div>
+            <div class="lsc-item">
+                SELECT MANIFESTATION
+            </div>
+            <div class="lsc-item">
+
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+
+    <script>
+        function recheckManifests() {
+            const g1 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(2)');
+            const g2 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(3)');
+            const g3 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(4)');
+            const g4 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(5)');
+            const g5 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(6)');
+
+            const manif = localStorage.getItem('manifested');
+            switch (manif) {
+                case "1.00":
+                    g1.removeClass('automagic').css('font-weight', 'bold').html("1.00");
+                    g2.html("1.25*").css('font-weight', '').addClass('automagic');
+                    g3.html("1.50*").css('font-weight', '').addClass('automagic');
+                    g4.html("1.75*").css('font-weight', '').addClass('automagic');
+                    g5.html("2.00*").css('font-weight', '').addClass('automagic');
+                    break;
+
+                case "1.25":
+                    g1.html("1.00*").css('font-weight', '').addClass('automagic');
+                    g2.removeClass('automagic').css('font-weight', 'bold').html("1.25");
+                    g3.html("1.50*").css('font-weight', '').addClass('automagic');
+                    g4.html("1.75*").css('font-weight', '').addClass('automagic');
+                    g5.html("2.00*").css('font-weight', '').addClass('automagic');
+                    break;
+
+                case "1.50":
+                    g1.html("1.00*").css('font-weight', '').addClass('automagic');
+                    g2.html("1.25*").css('font-weight', '').addClass('automagic');
+                    g3.removeClass('automagic').css('font-weight', 'bold').html("1.50");
+                    g4.html("1.75*").css('font-weight', '').addClass('automagic');
+                    g5.html("2.00*").css('font-weight', '').addClass('automagic');
+                    break;
+
+                case "1.75":
+                    g1.html("1.00*").css('font-weight', '').addClass('automagic');
+                    g2.html("1.25*").css('font-weight', '').addClass('automagic');
+                    g3.html("1.50*").css('font-weight', '').addClass('automagic');
+                    g4.removeClass('automagic').css('font-weight', 'bold').html("1.75");
+                    g5.html("2.00*").css('font-weight', '').addClass('automagic');
+                    break;
+
+                case "2.00":
+                    g1.html("1.00*").css('font-weight', '').addClass('automagic');
+                    g2.html("1.25*").css('font-weight', '').addClass('automagic');
+                    g3.html("1.50*").css('font-weight', '').addClass('automagic');
+                    g4.html("1.75*").css('font-weight', '').addClass('automagic');
+                    g5.removeClass('automagic').css('font-weight', 'bold').html("2.00");
+                    break;
+
+                default:
+                    g1.html("1.00*");
+                    g2.html("1.25*");
+                    g3.html("1.50*");
+                    g4.html("1.75*");
+                    g5.html("2.00*");
+                    break;
+            }
+        }
+
+        $(document).ready(function () {
+            const g1 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(2)');
+            const g2 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(3)');
+            const g3 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(4)');
+            const g4 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(5)');
+            const g5 = $('.right-side.line-select-content:not(.headers) > .lsc-item:nth-of-type(6)');
+
+            g1.click(function () { localStorage.setItem("manifested", "1.00"); recheckManifests(); });
+            g2.click(function () { localStorage.setItem("manifested", "1.25"); recheckManifests(); });
+            g3.click(function () { localStorage.setItem("manifested", "1.50"); recheckManifests(); });
+            g4.click(function () { localStorage.setItem("manifested", "1.75"); recheckManifests(); });
+            g5.click(function () { localStorage.setItem("manifested", "2.00"); recheckManifests(); });
+        });
+    </script>
+</body>
+
+</html>

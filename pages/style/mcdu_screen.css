@@ -30,6 +30,7 @@ body {
 
 .headers {
     top: -20px;
+    z-index: -1;
 }
 .headers .lsc-item {
     font-size: 20px;
@@ -41,19 +42,19 @@ body {
     height: 35px;
 }
 
-#left-side {
+.left-side {
     left: 0;
     text-align: left;
     align-self: flex-start;
 }
 
-#middle {
+.middle {
     text-align: center;
     align-items: center;
     width: 100%;
 }
 
-#right-side {
+.right-side {
     right: 0;
     text-align: right;        
 }
